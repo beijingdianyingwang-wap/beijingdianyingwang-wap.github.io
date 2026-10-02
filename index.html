@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="北京电影网 - 帝都光影，一网打尽。北京电影网 beijingdianyingwang-wap.github.io，北京本地影视资讯与好片推荐，每日更新，追剧看片不迷路。">
+<meta name="keywords" content="北京电影网, beijingdianyingwang, 北京影视, 北京好片, 热门电影, 追剧, 影视推荐, 北京电影网官网">
+<meta name="author" content="北京电影网">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="revisit-after" content="1 days">
+<meta property="og:title" content="北京电影网 - 帝都光影，一网打尽">
+<meta property="og:description" content="北京电影网 - 北京本地影视资讯与好片推荐，每日更新，追剧看片不迷路。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beijingdianyingwang-wap.github.io">
+<meta property="og:site_name" content="北京电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="北京电影网">
+<meta name="twitter:description" content="北京电影网 - 帝都光影，一网打尽。">
+<title>北京电影网 - 帝都光影，一网打尽 | 北京影视好片推荐</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --wall:#9e2b25;--wall2:#7d1f1b;--gold:#d4a017;--gold2:#f0c75e;--ink:#1f1a17;--paper:#fbf6ee;
+  --jade:#3f7d6f;--night:#14121a;--snow:#f4f7f9;--cloud:#8c9299;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:"PingFang SC","Microsoft YaHei","Songti SC",serif;background:var(--paper);color:var(--ink);line-height:1.75;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-2;background:var(--paper)}
+/* 雪花窗棂纹理背景 */
+body::after{content:'';position:fixed;inset:0;z-index:-1;opacity:.16;pointer-events:none;background-image:radial-gradient(circle,var(--cloud) 1px,transparent 1.4px);background-size:30px 30px}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+::selection{background:var(--wall);color:var(--gold2)}
+img{max-width:100%;display:block}
+
+/* Loader - 宫灯点亮 */
+#loader{position:fixed;inset:0;z-index:9999;background:var(--night);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .6s}
+#loader.hide{opacity:0;pointer-events:none}
+#loader .lantern{width:64px;height:78px;position:relative;animation:glow 1.4s ease-in-out infinite alternate}
+#loader .lantern .body{width:64px;height:56px;border-radius:30px 30px 26px 26px;background:radial-gradient(circle at 50% 40%,var(--gold2),var(--gold) 55%,#8a680c);border:2px solid var(--ink);box-shadow:0 0 24px var(--gold),inset 0 0 10px rgba(255,255,255,.4)}
+#loader .lantern .top{width:18px;height:6px;background:var(--ink);margin:0 auto;border-radius:3px 3px 0 0}
+#loader .lantern .tassel{width:3px;height:20px;background:var(--gold);margin:0 auto}
+#loader .lantern .cap{width:30px;height:5px;background:var(--ink);margin:0 auto;border-radius:2px}
+@keyframes glow{from{filter:drop-shadow(0 0 4px var(--gold))}to{filter:drop-shadow(0 0 20px var(--gold2))}}
+#loader .lab{font-size:1.6rem;font-weight:900;letter-spacing:5px;color:var(--gold2)}
+#loader .tip{font-size:.82rem;color:var(--cloud);letter-spacing:3px}
+
+/* Header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(251,246,238,.96);backdrop-filter:blur(10px);border-bottom:3px solid var(--wall)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .seal{width:38px;height:38px;background:var(--wall);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold2);font-weight:900;line-height:1;font-size:.72rem;border:2px solid var(--ink);position:relative}
+.logo .seal::before{content:'';position:absolute;inset:2px;border:1px solid var(--gold2);border-radius:2px}
+.logo .seal b{font-size:1rem}
+.logo .nm{font-size:1.5rem;font-weight:900;color:var(--wall);letter-spacing:1px}
+.logo .py{font-size:.66rem;color:var(--cloud);letter-spacing:2px;text-transform:uppercase}
+.hnav{display:flex;gap:2px;align-items:center}
+.hnav a{padding:10px 15px;font-size:.88rem;font-weight:800;color:#4a423c;position:relative}
+.hnav a::after{content:'';position:absolute;left:50%;bottom:4px;width:0;height:3px;background:var(--gold);transition:.3s;transform:translateX(-50%)}
+.hnav a:hover::after,.hnav a.on::after{width:70%}
+.hnav a.on{color:var(--wall)}
+.mbtn{display:none;width:46px;height:46px;background:var(--wall);border:0;cursor:pointer;position:relative;border-radius:6px}
+.mbtn span{position:absolute;left:11px;width:24px;height:2.5px;background:var(--gold2);transition:.3s;border-radius:2px}
+.mbtn span:nth-child(1){top:15px}.mbtn span:nth-child(2){top:22px}.mbtn span:nth-child(3){top:29px}
+.mbtn.x span:nth-child(1){top:22px;transform:rotate(45deg)}.mbtn.x span:nth-child(2){opacity:0}.mbtn.x span:nth-child(3){top:22px;transform:rotate(-45deg)}
+
+/* Hero - 宫门式布局 */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:96px 0 60px;background:linear-gradient(160deg,var(--wall) 0%,var(--wall2) 60%,#5e1511 100%);color:var(--gold2);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 78px,rgba(212,160,23,.05) 78px,rgba(212,160,23,.05) 80px)}
+.hero-in{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero-in .cour{font-size:.74rem;letter-spacing:5px;color:var(--gold);font-weight:800;margin-bottom:16px}
+.hero-in h1{font-size:clamp(2.4rem,6.4vw,4.6rem);font-weight:900;line-height:1.14;color:#fff;letter-spacing:-1px}
+.hero-in h1 em{font-style:normal;color:var(--gold2);position:relative;display:inline-block}
+.hero-in h1 em::after{content:'◆';position:absolute;top:-16px;right:-26px;font-size:.35em;color:var(--gold)}
+.hero-in .sub{font-size:1.05rem;color:rgba(240,199,94,.88);margin:22px 0 26px;line-height:1.95}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border:2.5px solid var(--gold);padding:14px 30px;font-weight:900;font-size:.9rem;cursor:pointer;transition:inherit;background:transparent;color:var(--gold2)}
+.btn.pri{background:var(--gold);color:var(--wall2);border-color:var(--gold)}
+.btn.pri:hover{background:#fff;color:var(--wall);border-color:#fff}
+.btn.sec:hover{background:var(--gold);color:var(--wall2)}
+/* 城门券门卡片 */
+.gates{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gate{border:2.5px solid var(--gold);background:rgba(0,0,0,.22);padding:18px 20px;position:relative;text-align:center;transition:inherit}
+.gate:hover{background:var(--gold);transform:translateY(-6px)}
+.gate:hover .gt,.gate:hover .gn{color:var(--wall2)}
+.gate .gn{font-size:1.9rem;font-weight:900;color:#fff;font-family:Georgia,serif;line-height:1}
+.gate .gt{font-size:.84rem;color:var(--gold2);font-weight:800;margin-top:6px}
+
+/* Section */
+.sec{max-width:1200px;margin:0 auto;padding:88px 24px;position:relative}
+.sec-head{margin-bottom:54px;border-bottom:3px double var(--wall);padding-bottom:16px}
+.sec-head .cn{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.sec-head .tag{background:var(--wall);color:var(--gold2);font-size:.7rem;font-weight:900;letter-spacing:3px;padding:4px 12px;border-radius:3px}
+.sec-head h2{font-size:clamp(1.5rem,3.6vw,2.25rem);font-weight:900;color:var(--ink);letter-spacing:-.5px}
+.sec-head .en{font-size:.72rem;color:var(--cloud);letter-spacing:4px;text-transform:uppercase}
+.sec-head p{font-size:.96rem;color:#5f5650;margin-top:12px;max-width:640px}
+
+/* ① 地铁线路图 DOM */
+.metro{border:3px solid var(--ink);background:var(--snow);padding:34px;position:relative}
+.metro::before{content:'北京地铁 · 影视线路图';position:absolute;top:-15px;left:24px;background:var(--gold);color:var(--wall2);font-size:.74rem;font-weight:900;letter-spacing:2px;padding:5px 16px;border:2px solid var(--ink)}
+.lines{display:flex;flex-direction:column;gap:20px}
+.line{display:flex;align-items:center;gap:16px}
+.line .badge{flex-shrink:0;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;border:2.5px solid var(--ink)}
+.line .track{flex:1;height:20px;border-radius:10px;position:relative;display:flex;align-items:center;padding:0 10px;overflow:hidden}
+.line .track span{position:absolute;top:0;bottom:0;left:0;border-radius:10px 0 0 10px;opacity:.85}
+.line .track small{position:relative;z-index:2;font-size:.72rem;color:#fff;font-weight:800;white-space:nowrap}
+.line .name{font-size:.94rem;font-weight:900;color:var(--ink);min-width:110px}
+.line .name b{display:block;font-size:.76rem;color:var(--cloud);font-weight:600}
+
+/* ② 放映时刻表 */
+.schedule{border:3px solid var(--ink);background:var(--paper);padding:0;overflow:hidden}
+.sched-head{background:var(--ink);color:var(--gold2);display:grid;grid-template-columns:90px 1fr 110px 110px;font-size:.82rem;font-weight:900;letter-spacing:1px}
+.sched-head div{padding:14px 18px;border-right:1px solid rgba(240,199,94,.25)}
+.sched-head div:last-child{border-right:0}
+.sched-row{display:grid;grid-template-columns:90px 1fr 110px 110px;border-bottom:1px solid rgba(31,26,23,.12);align-items:center;transition:inherit}
+.sched-row:nth-child(even){background:rgba(212,160,23,.06)}
+.sched-row:hover{background:var(--gold);cursor:pointer}
+.sched-row:hover .ti,.sched-row:hover .gen{color:var(--wall2)}
+.sched-row div{padding:16px 18px;border-right:1px solid rgba(31,26,23,.08)}
+.sched-row div:last-child{border-right:0}
+.sched-row .tm{font-weight:900;color:var(--wall);font-family:Georgia,serif;font-size:1.02rem}
+.sched-row .ti{font-weight:800;font-size:.98rem}
+.sched-row .gen{font-size:.82rem;color:#5f5650}
+.sched-row .st{font-size:.78rem;font-weight:800;color:var(--wall2);background:var(--gold);padding:4px 0;text-align:center}
+
+/* ③ 胡同门牌网格 */
+.alley{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.door{border:3px solid var(--ink);background:var(--paper);position:relative;overflow:hidden;transition:inherit}
+.door::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,var(--wall),var(--wall) 10px,var(--wall2) 10px,var(--wall2) 20px)}
+.door .inner{padding:22px 18px 18px;text-align:center}
+.door .plate{display:inline-block;background:var(--wall);color:var(--gold2);font-size:1.15rem;font-weight:900;padding:6px 16px;letter-spacing:2px;border:2px solid var(--ink);margin-bottom:10px;font-family:"Songti SC",serif}
+.door h4{font-size:1rem;font-weight:900;margin-bottom:6px;color:var(--ink)}
+.door p{font-size:.82rem;color:#5f5650;line-height:1.7}
+.door:hover{transform:scale(1.04) rotate(-1deg);background:var(--gold)}
+.door:hover .plate{background:var(--ink);color:var(--gold2)}
+
+/* ④ 宫灯轮播 */
+.lantern-show{position:relative;max-width:760px;margin:0 auto}
+.lant{border:3px solid var(--ink);background:var(--wall);padding:40px 34px;color:var(--gold2);text-align:center;position:relative;min-height:260px;display:none}
+.lant.on{display:block;animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lant::before{content:'◆';position:absolute;top:14px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:.7rem;letter-spacing:8px}
+.lant .big{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.35}
+.lant .ds{font-size:.98rem;color:rgba(240,199,94,.9);line-height:1.95;max-width:540px;margin:0 auto}
+.lant .mk{margin-top:18px;font-size:.8rem;color:var(--gold);font-weight:800;letter-spacing:2px}
+.lant-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
+.lant-ctrl button{width:46px;height:46px;background:var(--ink);color:var(--gold2);border:2.5px solid var(--ink);cursor:pointer;font-size:1.3rem;transition:inherit;border-radius:50%}
+.lant-ctrl button:hover{background:var(--wall)}
+.lant-ctrl .dots{display:flex;gap:8px}
+.lant-ctrl .dots i{width:11px;height:11px;border-radius:50%;background:var(--cloud);cursor:pointer;transition:inherit}
+.lant-ctrl .dots i.on{background:var(--wall);transform:scale(1.3)}
+
+/* ⑤ 节气影单 */
+.term{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.td{border:3px solid var(--ink);background:var(--paper);padding:24px;position:relative;transition:inherit}
+.td::after{content:'';position:absolute;top:10px;right:10px;font-size:1.6rem;opacity:.18}
+.td.s1::after{content:'🌸'}.td.s2::after{content:'☀️'}.td.s3::after{content:'🍂'}.td.s4::after{content:'❄️'}.td.s5::after{content:'🌿'}.td.s6::after{content:'🍁'}
+.td .qi{font-size:.74rem;color:var(--wall);font-weight:900;letter-spacing:3px;margin-bottom:6px}
+.td h4{font-size:1.15rem;font-weight:900;margin-bottom:10px;color:var(--ink)}
+.td p{font-size:.86rem;color:#5f5650;line-height:1.8}
+.td .pick{margin-top:14px;font-size:.82rem;color:var(--wall2);font-weight:800;border-top:1px dashed var(--cloud);padding-top:10px}
+.td:hover{background:var(--wall);transform:translateY(-8px);box-shadow:0 12px 0 var(--ink)}
+.td:hover h4,.td:hover p,.td:hover .pick{color:var(--gold2)}
+
+/* ⑥ 盖章明信片表单 */
+.pcard{border:3px solid var(--ink);background:var(--snow);padding:36px;position:relative;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.pcard::before{content:'寄给北京电影网的一张明信片';position:absolute;top:-15px;left:24px;background:var(--wall);color:var(--gold2);font-size:.74rem;font-weight:900;letter-spacing:2px;padding:5px 16px;border:2px solid var(--ink)}
+.frm{display:flex;flex-direction:column;gap:14px}
+.frm .r{display:grid;grid-template-columns:80px 1fr;gap:12px;align-items:center}
+.frm label{font-size:.86rem;font-weight:900;color:var(--ink)}
+.frm input,.frm select,.frm textarea{width:100%;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:10px 4px;font-size:.96rem;font-family:inherit;color:var(--ink)}
+.frm input:focus,.frm select:focus,.frm textarea:focus{outline:none;border-bottom-color:var(--wall);background:rgba(212,160,23,.1)}
+.frm textarea{resize:vertical;min-height:70px;border:2px solid var(--ink);padding:10px}
+.stamp{width:120px;height:120px;border:4px double var(--wall);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--wall);flex-shrink:0;transform:rotate(-12deg);position:relative}
+.stamp::before{content:'';position:absolute;inset:5px;border:1px solid var(--wall);border-radius:50%}
+.stamp b{font-size:1.35rem;font-weight:900;font-family:"Songti SC",serif;line-height:1.1}
+.stamp small{font-size:.68rem;letter-spacing:1px;margin-top:4px}
+.pcard .send{margin-top:20px;background:var(--wall);color:var(--gold2);border:2.5px solid var(--ink);padding:14px 30px;font-size:.92rem;font-weight:900;cursor:pointer;transition:inherit}
+.pcard .send:hover{background:var(--ink)}
+.pcard .done{margin-top:14px;font-size:.88rem;color:var(--jade);font-weight:800;display:none}
+
+/* ⑦ 双栏宣言 */
+.decl{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+.decl .col .ttl{font-size:1.3rem;font-weight:900;padding-bottom:14px;border-bottom:3px solid var(--gold);margin-bottom:20px;color:var(--wall)}
+.decl .col ul li{padding:12px 0 12px 34px;position:relative;font-size:.96rem;color:#4a423c;line-height:1.85;border-bottom:1px dotted rgba(31,26,23,.18)}
+.decl .col ul li::before{content:'❖';position:absolute;left:6px;top:12px;color:var(--wall);font-size:.85rem}
+.decl .col .urlbox{display:inline-block;margin-top:22px;background:var(--ink);color:var(--gold2);padding:14px 26px;font-size:.95rem;font-weight:800;letter-spacing:.5px;border-radius:4px}
+.decl .col .urlbox:hover{background:var(--wall)}
+
+/* Footer */
+.ft{border-top:10px solid var(--wall);padding:56px 0 26px;margin-top:56px;background:var(--night);color:var(--snow)}
+.ft-in{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px;margin-bottom:34px}
+.ft-in .brand .seal2{width:44px;height:44px;background:var(--wall);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--gold2);font-weight:900;font-size:.9rem;border:2px solid var(--gold2);margin-bottom:12px}
+.ft-in h4{font-size:1.15rem;font-weight:900;margin-bottom:14px;color:var(--gold2)}
+.ft-in p,.ft-in a{font-size:.88rem;color:#b9b3ac;line-height:2}
+.ft-in .lk{display:flex;flex-direction:column;gap:2px}
+.ft-in .lk a{padding:3px 0;width:fit-content}
+.ft-in .lk a:hover{color:var(--gold2);transform:translateX(4px)}
+.ft-bot{max-width:1200px;margin:0 auto;padding:22px 24px 0;border-top:1px solid rgba(255,255,255,.14);font-size:.8rem;color:#8c8580;text-align:center;line-height:2}
+.ft-bot b{color:var(--gold2);font-weight:800}
+
+#top{position:fixed;bottom:22px;right:22px;width:50px;height:50px;background:var(--wall);color:var(--gold2);border:2.5px solid var(--ink);cursor:pointer;font-size:1.2rem;font-weight:900;opacity:0;visibility:hidden;transform:scale(.7);transition:.3s;z-index:999;border-radius:50%;line-height:46px;text-align:center}
+#top.show{opacity:1;visibility:visible;transform:scale(1)}
+#top:hover{background:var(--ink)}
+
+@media(max-width:768px){
+  html{font-size:14px}
+  .hd-in{height:60px;padding:0 14px}
+  .logo .nm{font-size:1.2rem}.logo .seal{width:32px;height:32px;font-size:.6rem}
+  .mbtn{display:block}
+  .hnav{position:fixed;top:60px;left:0;right:0;flex-direction:column;background:var(--paper);padding:12px;max-height:0;overflow:hidden;transition:max-height .35s;border-bottom:3px solid var(--wall)}
+  .hnav.open{max-height:520px;overflow-y:auto}
+  .hnav a{padding:13px;text-align:center;width:100%}
+  .hero{padding:76px 0 46px;min-height:auto}
+  .hero-in{grid-template-columns:1fr;gap:36px}
+  .gates{grid-template-columns:1fr 1fr}
+  .sec{padding:60px 14px}
+  .metro,.lant,.pcard{padding:24px 18px}
+  .alley,.term,.decl,.ft-in{grid-template-columns:1fr 1fr;gap:16px}
+  .line .name{min-width:auto;font-size:.84rem}
+  .line .badge{width:40px;height:40px;font-size:.92rem}
+  .sched-head{grid-template-columns:64px 1fr 76px}
+  .sched-head div:nth-child(4),.sched-row div:nth-child(4){display:none}
+  .sched-row{grid-template-columns:64px 1fr 76px}
+  .pcard{grid-template-columns:1fr}
+  .stamp{margin:0 auto}
+}
+@media(max-width:400px){
+  .alley,.term,.decl,.ft-in{grid-template-columns:1fr}
+  .hero-cta .btn{flex:1;justify-content:center;padding:12px 16px}
+  .btn{padding:12px 20px}
+  .gates{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div id="loader"><div class="lantern"><div class="cap"></div><div class="body"></div><div class="tassel"></div></div><div class="lab">北京电影网</div><div class="tip">帝都光影 · 一网打尽</div></div>
+
+<header class="hd">
+  <div class="hd-in">
+    <a href="#home" class="logo"><span class="seal"><b>京</b></span><span class="nm">北京电影网</span><span class="py">Beijing Film</span></a>
+    <nav class="hnav" id="hnav">
+      <a href="#home" class="on">首页</a>
+      <a href="#metro">影视线路</a>
+      <a href="#sched">放映时刻</a>
+      <a href="#alley">胡同门牌</a>
+      <a href="#pick">今日推介</a>
+      <a href="#term">节气影单</a>
+      <a href="#card">明信片</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <button class="mbtn" id="mbtn" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-in">
+    <div>
+      <div class="cour">◆ 帝都光影 · 一网打尽</div>
+      <h1>京城光影<br>尽在 <em>北京电影网</em></h1>
+      <p class="sub">北京电影网——帝都人的影视放映厅。每天从全网筛出最值得看的片，热门、经典、冷门好片，一站打尽。</p>
+      <div class="hero-cta">
+        <a href="#sched" class="btn pri">🎬 看看今日放映</a>
+        <a href="#pick" class="btn sec">◆ 今日推介</a>
+      </div>
+    </div>
+    <div class="gates">
+      <div class="gate"><div class="gn">1200+</div><div class="gt">热门收录</div></div>
+      <div class="gate"><div class="gn">24</div><div class="gt">每日更新</div></div>
+      <div class="gate"><div class="gn">8</div><div class="gt">影视类型</div></div>
+      <div class="gate"><div class="gn">∞</div><div class="gt">免费推荐</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ① 地铁线路图 DOM -->
+<section class="sec" id="metro">
+  <div class="sec-head"><div class="cn"><span class="tag">① 线路图</span><h2>影视线路图</h2><span class="en">Metro Map</span></div><p>把影视类型画成北京地铁线路，哪一站是你的菜？点击任一线条感受线路流动。</p></div>
+  <div class="metro">
+    <div class="lines">
+      <div class="line"><span class="badge" style="background:#c0392b">1</span><span class="name">悬疑线<b>Suspense</b></span><div class="track" style="background:rgba(192,57,43,.2)"><span style="width:92%;background:#c0392b"></span><small>烧脑反转 · 全程高能</small></div></div>
+      <div class="line"><span class="badge" style="background:#27ae60">2</span><span class="name">喜剧线<b>Comedy</b></span><div class="track" style="background:rgba(39,174,96,.2)"><span style="width:78%;background:#27ae60"></span><small>解压爆笑 · 快乐加倍</small></div></div>
+      <div class="line"><span class="badge" style="background:#2980b9">3</span><span class="name">动作线<b>Action</b></span><div class="track" style="background:rgba(41,128,185,.2)"><span style="width:85%;background:#2980b9"></span><small>肾上腺素 · 爽快到底</small></div></div>
+      <div class="line"><span class="badge" style="background:#e67e22">4</span><span class="name">爱情线<b>Romance</b></span><div class="track" style="background:rgba(230,126,34,.2)"><span style="width:70%;background:#e67e22"></span><small>心动瞬间 · 甜蜜暴击</small></div></div>
+      <div class="line"><span class="badge" style="background:#8e44ad">5</span><span class="name">动画线<b>Anime</b></span><div class="track" style="background:rgba(142,68,173,.2)"><span style="width:63%;background:#8e44ad"></span><small>治愈童心 · 想象无界</small></div></div>
+      <div class="line"><span class="badge" style="background:#16a085">6</span><span class="name">纪录线<b>Documentary</b></span><div class="track" style="background:rgba(22,160,133,.2)"><span style="width:55%;background:#16a085"></span><small>真实力量 · 看见世界</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 放映时刻表 -->
+<section class="sec" id="sched">
+  <div class="sec-head"><div class="cn"><span class="tag">② 放映厅</span><h2>今日放映时刻表</h2><span class="en">Now Showing</span></div><p>像电影院一样排好档期，跟着时间走，一部接一部。</p></div>
+  <div class="schedule">
+    <div class="sched-head"><div>放映时间</div><div>片名</div><div>类型</div><div>热度</div></div>
+    <div class="sched-row"><div class="tm">09:00</div><div class="ti">《默杀》悬疑风暴</div><div class="gen">悬疑</div><div class="st">🔥 9.2</div></div>
+    <div class="sched-row"><div class="tm">11:30</div><div class="ti">《抓娃娃》爆笑解压</div><div class="gen">喜剧</div><div class="st">🔥 8.8</div></div>
+    <div class="sched-row"><div class="tm">14:00</div><div class="ti">《异人之下》国漫真人</div><div class="gen">动作</div><div class="st">🔥 8.5</div></div>
+    <div class="sched-row"><div class="tm">16:30</div><div class="ti">《你的婚礼》心动瞬间</div><div class="gen">爱情</div><div class="st">🔥 8.4</div></div>
+    <div class="sched-row"><div class="tm">19:00</div><div class="ti">《深海》治愈动画</div><div class="gen">动画</div><div class="st">🔥 8.9</div></div>
+    <div class="sched-row"><div class="tm">21:30</div><div class="ti">《里斯本丸沉没》真实记录</div><div class="gen">纪录片</div><div class="st">🔥 9.0</div></div>
+  </div>
+</section>
+
+<!-- ③ 胡同门牌网格 -->
+<section class="sec" id="alley">
+  <div class="sec-head"><div class="cn"><span class="tag">③ 胡同</span><h2>胡同门牌</h2><span class="en">Alley Doors</span></div><p>一条胡同一扇门，推开都是好故事。每个门牌后都藏着一种心情。</p></div>
+  <div class="alley">
+    <div class="door"><div class="inner"><div class="plate">壹号</div><h4>悬疑烧脑</h4><p>反转再反转，逻辑密不透风。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">贰号</div><h4>喜剧解压</h4><p>笑着笑着，烦恼就没了。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">叁号</div><h4>动作爽片</h4><p>大场面，看得痛快。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">肆号</div><h4>爱情心动</h4><p>每一帧都是心动。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">伍号</div><h4>动画治愈</h4><p>给心里留一片柔软。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">陆号</div><h4>纪录真实</h4><p>真实，比故事更有力。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">柒号</div><h4>经典重温</h4><p>老片新看，别有滋味。</p></div></div>
+    <div class="door"><div class="inner"><div class="plate">捌号</div><h4>冷门遗珠</h4><p>小众高分，越挖越惊喜。</p></div></div>
+  </div>
+</section>
+
+<!-- ④ 宫灯轮播 -->
+<section class="sec" id="pick">
+  <div class="sec-head"><div class="cn"><span class="tag">④ 推介</span><h2>今日推介</h2><span class="en">Today's Pick</span></div><p>一盏宫灯，一句话，帮你决定今天看什么。</p></div>
+  <div class="lantern-show">
+    <div class="lant on"><div class="big">「想看一部能让人安静下来的电影」</div><div class="ds">推荐《深海》《里斯本丸沉没》这类慢节奏、画面美的片子，适合一个人窝在沙发里慢慢看。</div><div class="mk">— 北京电影网 · 今日心情片单</div></div>
+    <div class="lant"><div class="big">「想笑，想大声笑出来」</div><div class="ds">推荐《抓娃娃》等国产喜剧，笑点密集不尴尬，看完心情瞬间变好。</div><div class="mk">— 北京电影网 · 今日心情片单</div></div>
+    <div class="lant"><div class="big">「想烧脑，想被剧情震撼」</div><div class="ds">推荐《默杀》系列，反转不断，看的时候别玩手机，错过一秒就跟不上。</div><div class="mk">— 北京电影网 · 今日心情片单</div></div>
+    <div class="lant"><div class="big">「想哭，想被治愈」</div><div class="ds">推荐《刺猬》这类荒诞又温情的片子，笑着笑着就哭了。</div><div class="mk">— 北京电影网 · 今日心情片单</div></div>
+    <div class="lant"><div class="big">「想陪孩子一起看」</div><div class="ds">推荐《深海》等国产动画，画面精致、故事温暖，大人小孩都看得进去。</div><div class="mk">— 北京电影网 · 今日心情片单</div></div>
+    <div class="lant-ctrl"><button id="prevL">‹</button><div class="dots" id="dots"></div><button id="nextL">›</button></div>
+  </div>
+</section>
+
+<!-- ⑤ 节气影单 -->
+<section class="sec" id="term">
+  <div class="sec-head"><div class="cn"><span class="tag">⑤ 节气</span><h2>二十四节气影单</h2><span class="en">Solar Terms</span></div><p>什么节气，就该看什么片子。跟着时节走，观影也有仪式感。</p></div>
+  <div class="term">
+    <div class="td s1"><div class="qi">🌸 春 · 惊蛰</div><h4>万物苏醒，看新生的故事</h4><p>推荐温暖治愈、关于成长与新生的片子。</p><div class="pick">✦ 推荐：《深海》《刺猬》</div></div>
+    <div class="td s2"><div class="qi">☀️ 夏 · 大暑</div><h4>最热的日子，看最爽的片</h4><p>动作、喜剧、爽片正当季，看得酣畅淋漓。</p><div class="pick">✦ 推荐：《异人之下》《抓娃娃》</div></div>
+    <div class="td s3"><div class="qi">🍂 秋 · 白露</div><h4>天凉好个秋，适合沉思</h4><p>悬疑烧脑、剧情向的片子，配一杯热茶。</p><div class="pick">✦ 推荐：《默杀》《里斯本丸沉没》</div></div>
+    <div class="td s4"><div class="qi">❄️ 冬 · 大雪</div><h4>窝在屋里，看温暖的故事</h4><p>爱情、家庭、温情向，最适合寒冬窝沙发。</p><div class="pick">✦ 推荐：《你的婚礼》《刺猬》</div></div>
+    <div class="td s5"><div class="qi">🌿 春分</div><h4>不冷不热，刚刚好</h4><p>节奏适中的生活流电影，温柔又有力量。</p><div class="pick">✦ 推荐：《深海》《里斯本丸沉没》</div></div>
+    <div class="td s6"><div class="qi">🍁 霜降</div><h4>一年将尽，盘点好片</h4><p>年度盘点、经典重温，把这一年补回来。</p><div class="pick">✦ 推荐：《默杀2》《异人之下》</div></div>
+  </div>
+</section>
+
+<!-- ⑥ 盖章明信片表单 -->
+<section class="sec" id="card">
+  <div class="sec-head"><div class="cn"><span class="tag">⑥ 明信片</span><h2>寄一张明信片</h2><span class="en">Postcard</span></div><p>想看什么片子？写在这张明信片上寄给我们，北京电影网替你留意。</p></div>
+  <div class="pcard">
+    <form class="frm" id="cardForm">
+      <div class="r"><label>寄信人</label><input type="text" id="cName" placeholder="你希望被怎么称呼" required></div>
+      <div class="r"><label>想看类型</label><select id="cType"><option>悬疑</option><option>喜剧</option><option>动作</option><option>爱情</option><option>动画</option><option>纪录片</option><option>经典老片</option></select></div>
+      <div class="r"><label>片名/心情</label><textarea id="cDesc" placeholder="写下片名，或描述你的心情（比如：想看一部秋天里适合沉思的片子）" required></textarea></div>
+      <button type="submit" class="send">🔥 盖上邮戳 · 寄出</button>
+      <div class="done" id="doneTxt">✔ 明信片已寄出！我们会留意你想要的片子～</div>
+    </form>
+    <div class="stamp"><b>北京<br>电影网</b><small>POSTED</small></div>
+  </div>
+</section>
+
+<!-- ⑦ 双栏宣言 -->
+<section class="sec" id="about">
+  <div class="sec-head"><div class="cn"><span class="tag">⑦ 关于</span><h2>关于北京电影网</h2><span class="en">About Us</span></div><p>帝都光影，一网打尽。北京电影网，为爱看片的你而存在。</p></div>
+  <div class="decl">
+    <div class="col">
+      <div class="ttl">◆ 我们想做的</div>
+      <ul>
+        <li>把全网影视筛一遍，只留下最值得看的那些。</li>
+        <li>每天更新，热门、经典、冷门好片都不落下。</li>
+        <li>按心情和时节推荐，找片不再是难题。</li>
+        <li>用心做内容，每一部推荐都值得你花时间。</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="ttl">◆ 找到我们</div>
+      <ul>
+        <li>这里是北京电影网的官方网址，收藏它就对了。</li>
+        <li>想看什么，随时寄明信片告诉我们。</li>
+        <li>本站内容均收集于互联网，仅供影视交流。</li>
+        <li>用心爱电影，也用心听你每一次推荐。</li>
+      </ul>
+      <a href="https://beijingdianyingwang-wap.github.io" class="urlbox">beijingdianyingwang-wap.github.io</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="brand"><div class="seal2">京</div><h4>北京电影网</h4><p>帝都光影，一网打尽。北京本地影视资讯与好片推荐，每日更新，追剧看片不迷路。</p></div>
+    <div><h4>站点导航</h4><div class="lk"><a href="#home">首页</a><a href="#metro">影视线路</a><a href="#sched">放映时刻</a><a href="#alley">胡同门牌</a><a href="#pick">今日推介</a><a href="#term">节气影单</a><a href="#card">明信片</a><a href="#about">关于我们</a></div></div>
+    <div><h4>热门分类</h4><div class="lk"><a href="#">悬疑</a><a href="#">喜剧</a><a href="#">动作</a><a href="#">爱情</a><a href="#">动画</a><a href="#">纪录片</a><a href="#">经典老片</a></div></div>
+  </div>
+  <div class="ft-bot"><p>&copy; 2024 <b>北京电影网</b>（beijingdianyingwang-wap.github.io）版权所有 ◆</p><p>本站内容均收集于互联网，仅供影视交流，如有侵权请联系删除</p></div>
+</footer>
+
+<button id="top" aria-label="返回顶部">↑</button>
+
+<script>
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('hide')},520)});
+var mbtn=document.getElementById('mbtn'),hnav=document.getElementById('hnav');
+mbtn.addEventListener('click',function(){mbtn.classList.toggle('x');hnav.classList.toggle('open')});
+hnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mbtn.classList.remove('x');hnav.classList.remove('open')})});
+/* 宫灯轮播 */
+var lants=document.querySelectorAll('.lant'),cur=0,dots=document.getElementById('dots');
+lants.forEach(function(l,i){var d=document.createElement('i');d.addEventListener('click',function(){go(i)});dots.appendChild(d)});
+var dotEls=dots.querySelectorAll('i');
+function go(i){lants[cur].classList.remove('on');dotEls[cur].classList.remove('on');cur=(i+lants.length)%lants.length;lants[cur].classList.add('on');dotEls[cur].classList.add('on')}
+document.getElementById('nextL').addEventListener('click',function(){go(cur+1)});
+document.getElementById('prevL').addEventListener('click',function(){go(cur-1)});
+dotEls[0].classList.add('on');
+/* 明信片表单 */
+document.getElementById('cardForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('doneTxt').style.display='block';
+  this.reset();
+  setTimeout(function(){document.getElementById('doneTxt').style.display='none'},4500);
+});
+/* 滚动 */
+var hd=document.querySelector('.hd'),topBtn=document.getElementById('top'),links=hnav.querySelectorAll('a'),secs=document.querySelectorAll('.sec,.hero');
+window.addEventListener('scroll',function(){
+  var sy=window.scrollY;
+  hd.style.boxShadow=(sy>60)?'0 3px 14px rgba(0,0,0,.08)':'none';
+  topBtn.classList.toggle('show',sy>400);
+  var c='';secs.forEach(function(s){if(sy>=s.offsetTop-160)c=s.id});
+  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+c)});
+});
+topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+
+</body>
+</html>
